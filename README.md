@@ -11,3 +11,5 @@ slotSizeGreaterThan = 0 </br></br>
 To get the State Id hit the following API directly in the browser URL - https://cdn-api.co-vin.in/api/v2/admin/location/states</br>
 TO get the District Id with the help of State Id - https://cdn-api.co-vin.in/api/v2/admin/location/districts/<State-Id></br>
 (Replace <State-Id> with actual id)
+  
+To run the java script. Download the HTML and double click should open it in default browser.
