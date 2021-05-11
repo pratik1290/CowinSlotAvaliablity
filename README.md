@@ -12,4 +12,5 @@ To get the State Id hit the following API directly in the browser URL - https://
 TO get the District Id with the help of State Id - https://cdn-api.co-vin.in/api/v2/admin/location/districts/<State-Id></br>
 (Replace <State-Id> with actual id)
   
+<h1>Run</h1>  
 To run the java script. Download the HTML and double click should open it in default browser.
