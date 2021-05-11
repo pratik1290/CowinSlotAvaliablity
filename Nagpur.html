@@ -25,6 +25,11 @@
     <!-- jQuery first, then Popper.js,
          then Bootstrap JS -->
     <script>
+
+        var districtId = 365;
+        var timeInMillis = 30000;
+        var age = 45;
+        var slotSizeGreaterThan = 0;
         self.setInterval(function () {
           document.body.style.backgroundColor = "red";
             var today = new Date();
@@ -36,7 +41,7 @@
             // Open an obejct (GET/POST, PATH,
             // ASYN-TRUE/FALSE)
             xhr.open("GET",
-"https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=365&date="+date, true);
+"https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id="+districtId+"&date="+date, true);
             //window.prompt("https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=337&"+date);
 
 
@@ -52,7 +57,7 @@
                         console.log(cent.sessions);
                         for ( var j = 0; j < cent.sessions.length; j++) {
                             var sess = cent.sessions[j];
-                            if(sess.min_age_limit == 18 && sess.available_capacity > 0){
+                            if(sess.min_age_limit == age && sess.available_capacity > slotSizeGreaterThan){
                               document.title = "Avaliable";
                               document.body.style.backgroundColor = "green";
                               window.prompt("Date-"+sess.date+"\nAddress-"+cent.address+"\nName-"+cent.address+"\nAge limit -"+sess.min_age_limit+"\nNo. of slots- "+sess.available_capacity);
@@ -61,11 +66,11 @@
                     }
                 }
                 else {
-                    console.log("File not found");
+                    console.log("Invalid response content.");
                 }
             }
             xhr.send();
-        }, 30000);
+        }, timeInMillis);
 
 
     </script>
